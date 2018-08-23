@@ -25,6 +25,7 @@ class TorchView: UIView {
     var sourceTorch : UIView?
     var parentView : UIView?
     var layerForEmitter : CAShapeLayer?
+    var layerForEmitterPath : UIBezierPath?
     var dragDelegate : DragRecognizerDelegate?
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,7 +57,8 @@ class TorchView: UIView {
     func createEmitterForTorch(){
         
         layerForEmitter = CAShapeLayer()
-        layerForEmitter!.path = createRoundedBezierPath().cgPath
+        layerForEmitterPath = createRoundedBezierPath()
+        layerForEmitter!.path = layerForEmitterPath!.cgPath
         layerForEmitter!.lineWidth = 1.0
         layerForEmitter!.fillColor = UIColor(white: 0.5, alpha: 0.5).cgColor
         layerForEmitter!.strokeColor = UIColor(red: 221.0/255.0, green: 221.0/255.0, blue: 221.0/255.0, alpha: 1.0).cgColor

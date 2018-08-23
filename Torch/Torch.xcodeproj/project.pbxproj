@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79BA1C52212E733D00E5E9DB /* TorchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA1C51212E733D00E5E9DB /* TorchView.swift */; };
 		79CDD76F212D7442009C1C85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CDD76E212D7442009C1C85 /* AppDelegate.swift */; };
 		79CDD771212D7442009C1C85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CDD770212D7442009C1C85 /* ViewController.swift */; };
 		79CDD774212D7442009C1C85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CDD772212D7442009C1C85 /* Main.storyboard */; };
 		79CDD776212D7446009C1C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CDD775212D7446009C1C85 /* Assets.xcassets */; };
 		79CDD779212D7446009C1C85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CDD777212D7446009C1C85 /* LaunchScreen.storyboard */; };
-		79CDD782212D7499009C1C85 /* TorchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CDD781212D7499009C1C85 /* TorchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79BA1C51212E733D00E5E9DB /* TorchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorchView.swift; sourceTree = "<group>"; };
 		79CDD76B212D7442009C1C85 /* Torch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Torch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CDD76E212D7442009C1C85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79CDD770212D7442009C1C85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,7 +24,6 @@
 		79CDD775212D7446009C1C85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79CDD778212D7446009C1C85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79CDD77A212D7446009C1C85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79CDD781212D7499009C1C85 /* TorchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79BA1C50212E733D00E5E9DB /* TorchView */ = {
+			isa = PBXGroup;
+			children = (
+				79BA1C51212E733D00E5E9DB /* TorchView.swift */,
+			);
+			path = TorchView;
+			sourceTree = "<group>";
+		};
 		79CDD762212D7442009C1C85 = {
 			isa = PBXGroup;
 			children = (
@@ -56,7 +64,7 @@
 		79CDD76D212D7442009C1C85 /* Torch */ = {
 			isa = PBXGroup;
 			children = (
-				79CDD780212D7488009C1C85 /* TorchView */,
+				79BA1C50212E733D00E5E9DB /* TorchView */,
 				79CDD76E212D7442009C1C85 /* AppDelegate.swift */,
 				79CDD770212D7442009C1C85 /* ViewController.swift */,
 				79CDD772212D7442009C1C85 /* Main.storyboard */,
@@ -65,14 +73,6 @@
 				79CDD77A212D7446009C1C85 /* Info.plist */,
 			);
 			path = Torch;
-			sourceTree = "<group>";
-		};
-		79CDD780212D7488009C1C85 /* TorchView */ = {
-			isa = PBXGroup;
-			children = (
-				79CDD781212D7499009C1C85 /* TorchView.swift */,
-			);
-			path = TorchView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +148,7 @@
 			files = (
 				79CDD771212D7442009C1C85 /* ViewController.swift in Sources */,
 				79CDD76F212D7442009C1C85 /* AppDelegate.swift in Sources */,
-				79CDD782212D7499009C1C85 /* TorchView.swift in Sources */,
+				79BA1C52212E733D00E5E9DB /* TorchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

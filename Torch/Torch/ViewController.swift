@@ -50,7 +50,7 @@ extension ViewController : DragRecognizerDelegate{
         
         let pointX1OnCircumference = ( 150.0 * deltaX1 / h1)
         let pointY1OnCircumference = ( 150.0 * deltaY1 / h1)
-        let point1OnCircumference = CGPoint(x: pointX1OnCircumference, y: pointY1OnCircumference)
+        var point1OnCircumference = CGPoint(x: pointX1OnCircumference, y: pointY1OnCircumference)
 
         let wallEndCoordinates = CGPoint(x: UIScreen.main.bounds.width - 50.0, y: UIScreen.main.bounds.height - 111.0)
        
@@ -60,7 +60,11 @@ extension ViewController : DragRecognizerDelegate{
         
         let pointX2OnCircumference = (150.0 * deltaX2 / h2)
         let pointY2OnCircumference = (150.0 * deltaY2 / h2)
-        let point2OnCircumference = CGPoint(x: pointX2OnCircumference, y: pointY2OnCircumference)
+        var point2OnCircumference = CGPoint(x: pointX2OnCircumference, y: pointY2OnCircumference)
+        
+        point1OnCircumference = torch!.convert(point1OnCircumference, to: self.view)
+        point2OnCircumference = torch!.convert(point2OnCircumference, to: self.view)
+
         
 //        print("wallStartCoordinates : \(wallStartCoordinates) ")
 //        print("wallEndCoordinates : \(wallEndCoordinates) ")
@@ -76,20 +80,24 @@ extension ViewController : DragRecognizerDelegate{
         bezierPathMask.addLine(to: point2OnCircumference)
         bezierPathMask.addLine(to: wallStartCoordinates)
         bezierPathMask.close()
+
         
-        if  maskLayer != nil {
-            maskLayer?.removeFromSuperlayer()
-            maskLayer = nil
+        if torch?.layerForEmitter != nil{
+            torch?.layerForEmitter?.removeFromSuperlayer()
+            torch?.layerForEmitter = nil
+            
+            torch!.layerForEmitterPath = nil
         }
-        maskLayer = CAShapeLayer()
-        maskLayer?.path = bezierPathMask.cgPath
-        maskLayer?.fillColor = UIColor.red.cgColor
-        torch?.layerForEmitter?.addSublayer(maskLayer!)
         
-        
-        
-        
-//        torch?.layerForEmitter?.mask = maskLayer
+        torch?.layerForEmitterPath = torch!.createRoundedBezierPath()
+        torch!.layerForEmitterPath!.append(bezierPathMask)
+        torch!.layerForEmitterPath!.usesEvenOddFillRule = true
+
+        torch!.layerForEmitter = CAShapeLayer()
+        torch!.layerForEmitter!.path = torch?.layerForEmitterPath!.cgPath
+        torch!.layerForEmitter!.fillRule = kCAFillRuleEvenOdd
+        torch!.layerForEmitter!.fillColor = UIColor.gray.cgColor
+        torch!.sourceTorch!.layer.addSublayer(torch!.layerForEmitter!)
         
         
     }
